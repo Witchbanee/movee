@@ -1,29 +1,26 @@
 
-// let burger = document.querySelector(".nav-button");
-// let burgerLine = document.querySelector(".nav__line");
-// let burgerOpenMenu = document.querySelector(".navigation__main");
-// let body = document.querySelector("body");
+let watchAll = document.querySelector(".price__full");
+let display = document.querySelector(".display-block");
+let kartochka = document.querySelectorAll(".price__item");
+let ff = document.querySelectorAll(".price__list");
+let priceHide = document.querySelector(".price__full--hide");
 
 
-// burger.addEventListener("click", function (evt) {
-//     evt.preventDefault();
-//     burgerOpenMenu.classList.toggle("navigation--mobile");
-//     body.classList.toggle("position");
-//     burgerLine.classList.toggle("nav__line");
-//     burgerLine.classList.toggle("nav__line--open");
-// });
+for (let test of kartochka) {
+    watchAll.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        test.classList.toggle("price__item--hidden");
+        test.classList.toggle("display-block");
+        priceHide.classList.toggle("price__hide--display-none");
+        watchAll.style.display = "none";
+    });
 
-// let burger = document.querySelector(".nav-button");
-// let burgerLine = document.querySelector(".nav__line");
-// let burgerOpenMenu = document.querySelector(".navigation__main");
-// let body = document.querySelector("body");
+    priceHide.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        watchAll.style.display = "block";
+        priceHide.style.display = "none";
+        test.classList.toggle("price__item--hidden");
+        test.classList.toggle("display-block");
+    });
 
-// let watchAll = document.querySelector(".price__full");
-// let display = document.querySelector(".display-block");
-// let kartochka = document.querySelector(".price__item:not(:first-child)");
-
-
-// watchAll.addEventListener("click", function (evt) {
-//     evt.preventDefault();
-//     kartochka.classList.toggle("display-none");
-// });
+}
